@@ -1,8 +1,9 @@
 import { createStore } from "vuex";
+import cursos from "../data/cursos.json";
 
 export default createStore({
   state: {
-    courses: [],
+    courses: [...cursos], // para copiar el array de cursos
   },
   mutations: {
     ADD_COURSE(state, course) {
@@ -18,6 +19,11 @@ export default createStore({
     },
     removeCourse({ commit }, courseId) {
       commit("REMOVE_COURSE", courseId);
+    },
+  },
+  getters: {
+    allCourses(state) {
+      return state.courses;
     },
   },
 });
