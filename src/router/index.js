@@ -11,6 +11,12 @@ const routes = [
     name: "Admin",
     component: () => import("../views/Admin.vue"), // Lazy loading de la vista Admin
   },
+  {
+    path: "/edit-course/:id",
+    name: "EditCourse",
+    component: () => import("../views/EditCourse.vue"), // Lazy loading de la vista Admin
+    props: true,
+  },
 ];
 
 const router = createRouter({
