@@ -4,7 +4,7 @@
       <p class="mb-1">&copy; {{ annioActual }} Universidad de los Andes</p>
       <p class="mb-0">
         <a
-          href="https://www.universidadandes.edu"
+          href="https://www.uandes.cl/"
           target="_blank"
           class="text-white text-decoration-none">
           Visita nuestro sitio web
