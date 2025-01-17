@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar />
     <h1>Todos los Cursos</h1>
     <div class="card-container">
       <CardCursos v-for="course in courses" :key="course.id" :course="course" />

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar />
     <h1>Administración de Cursos</h1>
 
     <div class="info-cards">

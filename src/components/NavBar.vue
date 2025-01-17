@@ -1,11 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <i class="bi bi-joystick"></i> Universidad de los Andes
+        <i class="bi bi-backpack4-fill"></i> Universidad de los Andes
       </a>
 
-      <!-- Botón de colapso para pantallas pequeñas -->
+      <!-- Botón para colapsar el menú en móviles -->
       <button
         class="navbar-toggler"
         type="button"
@@ -25,13 +25,13 @@
               v-if="$route.path !== '/'"
               to="/"
               class="nav-link active">
-              <b> <i class="bi bi-house-door-fill"></i> Home</b>
+              <i class="bi bi-house-door-fill"></i> Home
             </router-link>
             <router-link
               v-if="$route.path !== '/admin'"
               to="/admin"
               class="nav-link active">
-              <b> <i class="bi bi-house-door-fill"></i> Administración</b>
+              <i class="bi bi-gear-fill"></i> Administración
             </router-link>
           </li>
         </ul>
@@ -41,16 +41,14 @@
 </template>
 
 <script>
-import router from "../router";
-
 export default {
   name: "NavBar",
 };
 </script>
 
-<style>
+<style scoped>
+/* Mejorar apariencia del Navbar */
 .navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 </style>
