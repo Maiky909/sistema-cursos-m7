@@ -12,7 +12,7 @@ export default createStore({
     REMOVE_CURSO(state, cursoId) {
       state.cursos = state.cursos.filter((curso) => curso.id !== cursoId);
     },
-    UPDATE_CURSO(state, updatedcurso) {
+    UPDATE_CURSO(state, updatedCurso) {
       const index = state.cursos.findIndex(
         (curso) => curso.id === updatedCurso.id
       );

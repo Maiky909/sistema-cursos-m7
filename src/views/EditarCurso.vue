@@ -177,7 +177,7 @@ export default {
     ...mapActions(["updateCurso"]),
 
     // Función para cargar el curso por ID
-    loadcurso() {
+    loadCurso() {
       const foundCurso = this.allCursos.find((c) => c.id === Number(this.id));
       if (foundCurso) {
         this.curso = { ...foundCurso };
@@ -206,12 +206,21 @@ export default {
         return;
       }
 
-      this.updatecurso(this.curso);
+      this.updateCurso(this.curso);
       this.$router.push("/admin");
     },
   },
+  watch: {
+    allCursos: {
+      handler() {
+        this.loadCurso();
+      },
+      immediate: true, // Se ejecuta inmediatamente cuando se monta el componente
+    },
+  },
+
   mounted() {
-    this.loadcurso();
+    this.loadCurso();
   },
 };
 </script>
