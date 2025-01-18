@@ -21,16 +21,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <router-link
-              v-if="$route.path !== '/'"
-              to="/"
-              class="nav-link active">
+            <!-- Mostrar "Home" -->
+            <router-link v-if="showMenu" to="/" class="nav-link active">
               <i class="bi bi-house-door-fill"></i> Home
             </router-link>
-            <router-link
-              v-if="$route.path !== '/admin'"
-              to="/admin"
-              class="nav-link active">
+
+            <!-- Mostrar "Administración" -->
+            <router-link v-if="!showMenu" to="/admin" class="nav-link active">
               <i class="bi bi-gear-fill"></i> Administración
             </router-link>
           </li>
@@ -43,11 +40,18 @@
 <script>
 export default {
   name: "NavBar",
+  computed: {
+    showMenu() {
+      return (
+        this.$route.path === "/admin" ||
+        this.$route.path.startsWith("/admin/editar-curso/")
+      );
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Mejorar apariencia del Navbar */
 .navbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

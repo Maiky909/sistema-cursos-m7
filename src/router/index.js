@@ -12,9 +12,9 @@ const routes = [
     component: () => import("../views/Admin.vue"), // Lazy loading de la vista Admin
   },
   {
-    path: "/edit-course/:id",
-    name: "EditCourse",
-    component: () => import("../views/EditCourse.vue"), // Lazy loading de la vista Admin
+    path: "/admin/editar-curso/:id",
+    name: "EditarCurso",
+    component: () => import("../views/EditarCurso.vue"), // Lazy loading de la vista Admin Editar Curso
     props: true,
   },
 ];

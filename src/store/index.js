@@ -1,61 +1,61 @@
 import { createStore } from "vuex";
-import cursos from "../data/cursos.json";
+import cursosData from "../data/cursos.json";
 
 export default createStore({
   state: {
-    courses: [...cursos], // para copiar el array de cursos
+    cursos: [...cursosData], // para copiar el array de cursos
   },
   mutations: {
-    ADD_COURSE(state, course) {
-      state.courses.push(course);
+    ADD_CURSO(state, curso) {
+      state.cursos.push(curso);
     },
-    REMOVE_COURSE(state, courseId) {
-      state.courses = state.courses.filter((course) => course.id !== courseId);
+    REMOVE_CURSO(state, cursoId) {
+      state.cursos = state.cursos.filter((curso) => curso.id !== cursoId);
     },
-    UPDATE_COURSE(state, updatedCourse) {
-      const index = state.courses.findIndex(
-        (course) => course.id === updatedCourse.id
+    UPDATE_CURSO(state, updatedcurso) {
+      const index = state.cursos.findIndex(
+        (curso) => curso.id === updatedCurso.id
       );
       if (index !== -1) {
-        state.courses[index] = { ...updatedCourse };
+        state.cursos[index] = { ...updatedCurso };
       }
     },
   },
   actions: {
-    addCourse({ commit }, course) {
-      commit("ADD_COURSE", course);
+    addCurso({ commit }, curso) {
+      commit("ADD_CURSO", curso);
     },
-    removeCourse({ commit }, courseId) {
-      commit("REMOVE_COURSE", courseId);
+    removeCurso({ commit }, cursoId) {
+      commit("REMOVE_CURSO", cursoId);
     },
-    updateCourse({ commit }, updatedCourse) {
-      commit("UPDATE_COURSE", updatedCourse);
+    updateCurso({ commit }, updatedCurso) {
+      commit("UPDATE_CURSO", updatedCurso);
     },
   },
   getters: {
-    allCourses(state) {
-      return state.courses;
+    allCursos(state) {
+      return state.cursos;
     },
-    totalCourses(state) {
-      return state.courses.length; // Total de cursos
+    totalCursos(state) {
+      return state.cursos.length;
     },
-    totalStudentsAllowed(state) {
-      return state.courses.reduce((sum, course) => sum + course.cupos, 0); // Total de cupos permitidos
+    totalCupos(state) {
+      return state.cursos.reduce((sum, curso) => sum + curso.cupos, 0);
     },
-    totalEnrolledStudents(state) {
-      return state.courses.reduce((sum, course) => sum + course.inscritos, 0); // Total de alumnos inscritos
+    totalInscritos(state) {
+      return state.cursos.reduce((sum, curso) => sum + curso.inscritos, 0);
     },
-    remainingSeats(state) {
-      return state.courses.reduce(
-        (sum, course) => sum + (course.cupos - course.inscritos),
+    cuposRestantes(state) {
+      return state.cursos.reduce(
+        (sum, curso) => sum + (curso.cupos - curso.inscritos),
         0
-      ); // Total de cupos restantes
+      );
     },
-    totalCompletedCourses(state) {
-      return state.courses.filter((course) => course.completado).length; // Cursos terminados
+    cursosCompletados(state) {
+      return state.cursos.filter((curso) => curso.completado).length;
     },
-    totalActiveCourses(state) {
-      return state.courses.filter((course) => !course.completado).length; // Cursos activos
+    cursosActivos(state) {
+      return state.cursos.filter((curso) => !curso.completado).length;
     },
   },
 });

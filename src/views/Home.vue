@@ -19,9 +19,9 @@ export default {
     CardCursos,
   },
   computed: {
-    ...mapGetters(["allCourses"]),
+    ...mapGetters(["allCursos"]),
     courses() {
-      return this.allCourses; // Accede al getter de Vuex
+      return this.allCursos; // Accede al getter de Vuex
     },
   },
 };

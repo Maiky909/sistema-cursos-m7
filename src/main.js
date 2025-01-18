@@ -4,9 +4,9 @@ import router from "./router";
 import store from "./store";
 
 // Importar Bootstrap y Bootstrap Icons
-import "bootstrap/dist/css/bootstrap.min.css"; // ✅ Estilos de Bootstrap
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // ✅ JS de Bootstrap para funcionalidad
-import "bootstrap-icons/font/bootstrap-icons.css"; // ✅ Iconos de Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const app = createApp(App);
 
