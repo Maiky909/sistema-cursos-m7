@@ -1,5 +1,37 @@
-# Vue 3 + Vite
+# Proyecto Vue - Sistema de Cursos
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+---
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Este proyecto esta realiazdo en Vue3 + Vite.
+
+Las Herramientas utilizadas son :
+
+- Vue3
+- Vuex
+- Vue Router
+- TBootstrap
+- Vite
+
+Vite es una herramienta de compilación que permite que sexperiencia de desarrollo más rápida y ágil para proyectos web modernos. [Ver más sobre Vite](https://es.vite.dev/guide/#descripcion-general)
+
+### Como Ejecutar el Proyecto :
+
+---
+
+1. **Instalar los paquetes necesarios**
+
+   Para Instalar los paquetes y dependencias necesarios del proyecto debemos ejecutar el siguiente comando:
+
+   ```bash
+   npm i
+   ```
+
+2. **Iniciar el Servidor**
+
+   Una vez ya tenemos completado el pasos 1 podremos ejecutar nuestro proyecto sin problemas, para esto ejecutamos el siguiente comando:
+
+   ```bash
+   npm run dev
+   ```
+
+Con esos pasos ya estaremos listo para ejecutar y probar la aplicación, en nuestro ambiente local http://localhost:5173/
